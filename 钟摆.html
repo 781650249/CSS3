@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    @keyframes secondrun {
+        0% {
+            transform: rotate(180deg);
+        }
+        100% {
+            transform: rotate(540deg);
+        }
+    }
+    
+    @keyframes minuterun {
+        0% {
+            transform: rotate(180deg);
+        }
+        100% {
+            transform: rotate(540deg);
+        }
+    }
+    
+    @keyframes hourrun {
+        0% {
+            transform: rotate(180deg)
+        }
+        100% {
+            transform: rotate(210deg)
+        }
+    }
+    
+    .clock {
+        width: 512px;
+        height: 512px;
+        position: relative;
+        background-image: url(img/clock.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .hour {
+        width: 32px;
+        height: 138px;
+        position: absolute;
+        background-image: url(img/hour.png);
+        transform-origin: center 16px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        left: 238px;
+        top: 239px;
+        z-index: 1;
+        animation: hourrun 3600s steps(1, end)
+    }
+    
+    .minute {
+        width: 32px;
+        height: 218px;
+        position: absolute;
+        transform-origin: center 16px;
+        background-image: url(img/minute.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        left: 238px;
+        top: 240px;
+        transform: rotate(180deg);
+        z-index: 2;
+        animation: minuterun 3600s steps(60, end);
+    }
+    
+    .second {
+        width: 16px;
+        height: 278px;
+        position: absolute;
+        background-image: url(img/second.png);
+        background-size: cover;
+        transform-origin: center 76px;
+        background-repeat: no-repeat;
+        left: 247px;
+        top: 180px;
+        transform: rotate(180deg);
+        animation: secondrun 60s steps(60, end) infinite;
+        z-index: 3
+    }
+</style>
+
+<body>
+    <div class="clock">
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+    </div>
+</body>
+
+</html>

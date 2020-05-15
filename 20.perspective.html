@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+     :root {
+        height: 100%;
+    }
+    
+    body {
+        perspective: 800px;
+        height: 100%;
+        perspective-origin: 600px 600px 600px
+    }
+    
+    .demo1,
+    .demo2,
+    .demo3,
+    .demo4,
+    .demo5 {
+        width: 200px;
+        height: 200px;
+        background-image: url(img/1.jpg);
+        background-size: cover;
+        top: 200px;
+        transform: rotateY(90deg);
+        position: absolute;
+    }
+    
+    .demo1 {
+        left: 200px;
+    }
+    
+    .demo2 {
+        left: 400px;
+    }
+    
+    .demo3 {
+        left: 600px;
+    }
+    
+    .demo4 {
+        left: 800px;
+    }
+    
+    .demo5 {
+        left: 1000px;
+    }
+</style>
+
+<body>
+    <div class="demo1"></div>
+    <div class="demo2"></div>
+    <div class="demo3"></div>
+    <div class="demo4"></div>
+    <div class="demo5"></div>
+
+</body>
+<script>
+    var body = document.getElementsByTagName('body')[0];
+    document.body.onmousemove = function(e) {
+        this.style.perspectiveOrigin = e.pageX + 'px ' + e.pageY + 'px';
+    }
+</script>
+
+
+
+
+</html>

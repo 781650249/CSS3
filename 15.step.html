@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    @keyframes run {
+        0% {
+            left: 100px
+        }  25% {
+            left: 200px;
+        } 50% {
+            left: 300px;
+        }75% {
+            left: 400px
+        } 100% {
+            left: 500px
+        }
+    }
+    .demo1,.demo2 {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        background-color: black;
+        left: 0;
+        color: #fff;
+    }
+    .demo1 {
+        top: 0;
+        animation: run 4s steps(10, end);
+    } 
+    .demo2 {
+        top: 100px;
+        animation: run 4s steps(10, start)
+    }
+</style>
+<body>
+    <div class="demo1">end</div>
+    <div class="demo2">start</div>
+</body>
+
+</html>

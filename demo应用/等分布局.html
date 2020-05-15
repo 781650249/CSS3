@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .wrapper {
+        resize: both;
+        overflow: hidden;
+        width: 400px;
+        height: 200px;
+        border: 1px solid black;
+        display: flex;
+    }
+    
+    .content {
+        flex: 1 1 auto;
+        border: 1px solid green;
+        height: 100px;
+        box-sizing: border-box;
+    }
+    
+    .content:nth-of-type(2) {
+        flex: 0 0 25%;
+    }
+    
+    .content:nth-of-type(3) {
+        flex: 0 0 25%;
+    }
+</style>
+
+<body>
+    <!-- 实现等分布局 -->
+    <div class="wrapper">
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<style>
+    .test {
+        width: 100px;
+        height: 100px;
+        transition: all 5s;
+        background: yellowgreen;
+    }
+    
+    .test1 {
+        width: 500px;
+    }
+    
+    button {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        background-color: gray;
+        left: 300px;
+        top: 200px;
+    }
+</style>
+
+<div id="el" class="test">
+    <button>点我</button>
+
+</div>
+<script>
+    var el = document.getElementById("el");
+    var button = document.getElementsByTagName('button')[0];
+    button.addEventListener("click", function() {
+        el.className += ' test1'
+    })
+    el.addEventListener('transitionend', function() {
+        button.style.backgroundColor = 'red';
+    })
+</script>

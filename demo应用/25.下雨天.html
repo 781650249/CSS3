@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .demo::after {
+        content: "";
+        width: 40px;
+        height: 40px;
+        border-radius: 45%;
+        display: block;
+        background-color: #abcdef;
+        box-shadow: 16px -18px 0px 0px #abcdef, 51px 5px 0px 0px #abcdef, 13px 16px 0px 0px #abcdef, 33px 16px 0px 0px #abcdef, 42px -10px 0px 0px #abcdef;
+        position: absolute;
+        top: 40px;
+        left: 20px;
+    }
+    
+    .demo::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        display: block;
+        background-color: #abcdef;
+        box-shadow: 36px -4px 0px 0px #abcdef, 52px 18px 0px 0px #abcdef, 85px 40px 0px 0px #abcdef;
+        border-radius: 50%;
+        position: absolute;
+        left: 20px;
+        top: 180px;
+    }
+    
+    .demo1 {
+        width: 150px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #abcdef;
+        position: absolute;
+        top: 260px;
+        left: 10px;
+    }
+</style>
+
+<body>
+    <div class="demo">
+        <div class="demo1"></div>
+    </div>
+</body>
+
+</html>

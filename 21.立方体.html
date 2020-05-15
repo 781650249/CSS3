@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .body {
+        perspective: 800px;
+        perspective-origin: 300px 100px;
+    }
+    
+    .wrapper {
+        position: absolute;
+        left: 200px;
+        top: 200px;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transform-style: preserve-3d;
+        transform: rotatey(63deg);
+        transform-origin: 100px 100px 100px;
+        -webkit-transform-style: preserve-3d;
+    }
+    
+    .demo {
+        width: 200px;
+        height: 200px;
+        background-image: url(img/3.jpg);
+        background-size: cover;
+        transform: translateZ(100px);
+    }
+</style>
+
+<body>
+
+    <div class="wrapper">
+        <div class="demo"></div>
+    </div>
+</body>
+
+</html>

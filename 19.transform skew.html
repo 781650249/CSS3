@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    @keyframes skewchange {
+        0% {
+            transform: skew(45deg, 45deg)
+        }
+        50% {
+            transform: skew(0deg, 0deg)
+        }
+        100% {
+            transform: skew(-45deg, -45deg)
+        }
+    }
+    
+    div {
+        position: absolute;
+        left: 200px;
+        top: 200px;
+        width: 200px;
+        height: 200px;
+        background-image: url(img/1.jpg);
+        background-size: cover;
+        transform-origin: center center;
+        transform: skew(0deg, 0deg); 
+        /* skew倾斜的是坐标轴 并不是元素本身 */
+        animation: skewchange 4s cubic-bezier(0, 0, 1, 1) infinite alternate
+    }
+</style>
+
+<body>
+    <div></div>
+</body>
+
+</html>

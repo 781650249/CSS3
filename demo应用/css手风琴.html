@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+    
+    .demo {
+        width: 400px;
+        height: 400px;
+        border: 1px solid black;
+        margin: 100px auto;
+        background-color: lightgray
+    }
+    
+    ul div:target {
+        border: 1px solid red;
+    }
+    
+    div[id]:not(:target) {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="demo">
+        <ul>
+            <li><a href="#items1">items1</a></li>
+            <div id="items1">1111</div>
+            <li><a href="#items2">items2</a></li>
+            <div id="items2">2222</div>
+            <li><a href="#items3">items3</a></li>
+            <div id="items3">3333</div>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>
