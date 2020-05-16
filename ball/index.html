@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    html,
+    body {
+        background-color: #000;
+        overflow: hidden;
+    }
+</style>
+
+<body>
+
+    <canvas id="can" height="500px" width="500px"></canvas>
+
+    <script>
+        var canvas = document.getElementById('can');
+        var ctx = canvas.getContext('2d');
+        var arr = [];
+
+
+
+        function init() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        init();
+        window.onresize = init();
+
+        canvas.addEventListener('mousemove', function(e) {
+            arr.push(new star(e.clientX, e.clientY))
+            var a = new star(e.clientX, e.clientY);
+            a.circle();
+        }, false)
+
+
+        function star(x, y) {
+            this.x = x;
+            this.y = y;
+            this.vx = (Math.random() - 0.5) * 3;
+            this.vy = (Math.random() - 0.5) * 3
+            this.color = 'rgb(' + random(0, 256) + ',' + random(0, 256) + ',' + random(0, 256) + ')';
+            this.a = 1;
+            this.circle = function() {
+                ctx.beginPath();
+                ctx.fillStyle = this.color;
+                ctx.arc(this.x, this.y, 50, 0, Math.PI * 2, 0);
+                this.globalCompositeOperation = 'lighter';
+                this.globalAlpha = this.a
+                ctx.fill()
+                ctx.stroke();
+                ctx.closePath();
+                this.leave()
+            }
+            this.leave = function() {
+                this.x += this.vx;
+                this.y += this.vy
+                this.a *= 0.98;
+            }
+
+        }
+
+        function render() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            arr.forEach(function(ele, index) {
+                ele.circle();
+                if (ele.a < 0.05) {
+                    arr.splice(index, 1);
+
+                }
+            });
+            setTimeout(function() {
+                render();
+            }, 16.7)
+
+        }
+        render();
+
+        function random(min, max) {
+            return Math.floor((max - min) * Math.random() + min)
+        }
+    </script>
+</body>
+
+</html>
